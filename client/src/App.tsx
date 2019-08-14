@@ -1,13 +1,21 @@
 import * as React from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
-import Login from './components/Login/Login';
+import Header from './components/Header/Header';
+import Home from './components/Home/Home'
+import NotFound from './components/NotFound/NotFound';
 
 class App extends React.Component {
   public render() {
     return (
-      <div className="App">
-        <Login/>
-      </div>
+      <Router>
+        <Header/>
+        <Switch>
+          <Route path = "/" component={Home} exact={true}/>
+          <Route path = "/Home" component={Home} exact={true}/>
+          <Route component={NotFound}/>
+        </Switch>
+      </Router>
     );
   }
 }
