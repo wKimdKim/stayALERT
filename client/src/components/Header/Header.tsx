@@ -1,5 +1,7 @@
 import * as React from 'react';
 import {Nav, Navbar} from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap';
+import './Header.css';
  
  
 class Header extends React.Component{
@@ -7,11 +9,19 @@ class Header extends React.Component{
         return ( 
             <div>
             <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="/home">Navbar</Navbar.Brand>
+                <LinkContainer to='home'>
+                    <Navbar.Brand>stay<span className="red-highlight">ALERT</span></Navbar.Brand>
+                </LinkContainer>
                 <Nav className="mr-auto">
-                    <Nav.Link to="/home">Home</Nav.Link>
-                    <Nav.Link to="/features">Features</Nav.Link>
-                    <Nav.Link to="/pricing">Pricing</Nav.Link>
+                    <LinkContainer to="/home">
+                        <Nav.Link>Home</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to="/news">
+                        <Nav.Link>News</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to="/favourite">
+                        <Nav.Link>Favourite</Nav.Link>
+                    </LinkContainer>
                 </Nav>
             </Navbar>
             </div>
