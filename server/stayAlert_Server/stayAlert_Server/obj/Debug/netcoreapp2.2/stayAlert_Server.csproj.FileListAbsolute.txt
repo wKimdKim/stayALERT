@@ -1,0 +1,14 @@
+D:\Sandbox\MSA-Phase2\server\stayAlert_Server\stayAlert_Server\bin\Debug\netcoreapp2.2\stayAlert_Server.deps.json
+D:\Sandbox\MSA-Phase2\server\stayAlert_Server\stayAlert_Server\bin\Debug\netcoreapp2.2\stayAlert_Server.runtimeconfig.json
+D:\Sandbox\MSA-Phase2\server\stayAlert_Server\stayAlert_Server\bin\Debug\netcoreapp2.2\stayAlert_Server.runtimeconfig.dev.json
+D:\Sandbox\MSA-Phase2\server\stayAlert_Server\stayAlert_Server\bin\Debug\netcoreapp2.2\stayAlert_Server.dll
+D:\Sandbox\MSA-Phase2\server\stayAlert_Server\stayAlert_Server\bin\Debug\netcoreapp2.2\stayAlert_Server.pdb
+D:\Sandbox\MSA-Phase2\server\stayAlert_Server\stayAlert_Server\obj\Debug\netcoreapp2.2\stayAlert_Server.csprojAssemblyReference.cache
+D:\Sandbox\MSA-Phase2\server\stayAlert_Server\stayAlert_Server\obj\Debug\netcoreapp2.2\stayAlert_Server.csproj.CoreCompileInputs.cache
+D:\Sandbox\MSA-Phase2\server\stayAlert_Server\stayAlert_Server\obj\Debug\netcoreapp2.2\stayAlert_Server.RazorAssemblyInfo.cache
+D:\Sandbox\MSA-Phase2\server\stayAlert_Server\stayAlert_Server\obj\Debug\netcoreapp2.2\stayAlert_Server.RazorAssemblyInfo.cs
+D:\Sandbox\MSA-Phase2\server\stayAlert_Server\stayAlert_Server\obj\Debug\netcoreapp2.2\stayAlert_Server.AssemblyInfoInputs.cache
+D:\Sandbox\MSA-Phase2\server\stayAlert_Server\stayAlert_Server\obj\Debug\netcoreapp2.2\stayAlert_Server.AssemblyInfo.cs
+D:\Sandbox\MSA-Phase2\server\stayAlert_Server\stayAlert_Server\obj\Debug\netcoreapp2.2\stayAlert_Server.RazorTargetAssemblyInfo.cache
+D:\Sandbox\MSA-Phase2\server\stayAlert_Server\stayAlert_Server\obj\Debug\netcoreapp2.2\stayAlert_Server.dll
+D:\Sandbox\MSA-Phase2\server\stayAlert_Server\stayAlert_Server\obj\Debug\netcoreapp2.2\stayAlert_Server.pdb
