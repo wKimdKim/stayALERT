@@ -8,7 +8,16 @@ import Article from './components/Article/Article';
 import FavouriteArticle from './components/Article/FavouriteArticle';
 import FavouritePage from './components/FavouritePage/FavouritePage';
 
-class App extends React.Component {
+interface IState {
+  hubConnection: any,
+  favouriteList: object
+}
+class App extends React.Component<{},IState> {
+  public signalR = require("@aspnet/signalr");
+  public state={
+    hubConnection: new this.signalR.HubConnectionBuilder().withUrl("https://stayalertdevop.azurewebsites.net/hub").build(),
+    favouriteList: [],
+  }
   public render() {
     return (
       <Router>
