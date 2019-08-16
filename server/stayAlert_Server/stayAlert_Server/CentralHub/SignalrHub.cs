@@ -12,5 +12,9 @@ namespace stayAlert_Server.CentralHub
         {
             await Clients.All.SendAsync("Connected");
         }
+        public async Task AddFavourite()
+        {
+            await Clients.All.SendAsync("UpdateFavourite");
+        }
     }
 }
