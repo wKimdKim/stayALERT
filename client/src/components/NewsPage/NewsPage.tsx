@@ -18,9 +18,7 @@ class NewsPage extends Component<{}, INewsPageState> {
         'hubConnection': null  
     }
     public getArticles=()=>{
-        fetch(`https://stayalertdevop.azurewebsites.net/api/News`,{
-            mode:"no-cors"
-        })
+        fetch(`https://stayalertdevop.azurewebsites.net/api/News`)
         .then((data:any)=> data.json())
         .then((resp:any)=>{
             const output:any[] = [];

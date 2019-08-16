@@ -14,7 +14,7 @@ namespace stayAlert_Server.CentralHub
         }
         public async Task AddFavourite()
         {
-            await Clients.All.SendAsync("UpdateFavourite");
+            await Clients.All.SendAsync("UpdateFavouriteList");
         }
     }
 }

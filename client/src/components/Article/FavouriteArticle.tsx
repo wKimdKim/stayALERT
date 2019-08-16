@@ -13,16 +13,13 @@ class FavouriteArticle extends Component<RouteComponentProps<IFavouriteArticlePr
 
     public constructor(props:RouteComponentProps<IFavouriteArticleProps>){
         super(props);
-        this.state = {
-            "isLoaded":false
-        }
     }
 
     public render() { 
         const {articleDetail} = this.props.location.state;
         const author=articleDetail.author===null?"N/A":articleDetail.author;
         const deleteFavourite=()=>{
-            fetch('https://stayalertdevop.azurewebsites.net/Articles/'+articleDetail.articleId,{
+            fetch('https://stayalertdevop.azurewebsites.net/api/Articles/'+articleDetail.articleId,{
                 method:'DELETE'
             })
         }

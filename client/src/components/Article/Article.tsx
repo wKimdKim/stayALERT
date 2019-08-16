@@ -55,7 +55,7 @@ class Article extends Component<RouteComponentProps<IArticleProps>, IArticleStat
         const author=articleDetail.author===null?"N/A":articleDetail.author;
         let favouriteButton; 
         if(!isAdded){
-            favouriteButton=<Button variant="link" onClick={this.handleFavourited}>Add to Favourite</Button>;
+            favouriteButton=<Button variant="link" className="Favourite" onClick={this.handleFavourited}>Add to Favourite</Button>;
         }
         else{
             favouriteButton=<Button variant="link">Added</Button>;

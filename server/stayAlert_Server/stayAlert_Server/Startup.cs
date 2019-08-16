@@ -52,7 +52,8 @@ namespace stayAlert_Server
         {
             app.UseCors(builder =>
             {
-                builder.WithOrigins("https://stayalert-client.azurewebsites.net/")
+                builder.WithOrigins("http://localhost:3000",
+                    "https://stayalert-client.azurewebsites.net/")
                     .AllowAnyHeader()
                     .AllowAnyMethod()
                     .AllowCredentials();
