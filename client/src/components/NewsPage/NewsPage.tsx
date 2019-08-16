@@ -6,17 +6,21 @@ import './NewsPage.css';
 // import * as signalR from "@aspnet/signalr";
  
 export interface INewsPageState {
-    'articleList':any[]
-    'isLoaded':any
+    'articleList':any[],
+    'isLoaded':any,
+    'hubConnection':any
 }
  
 class NewsPage extends Component<{}, INewsPageState> {
     public state = { 
         'articleList':[],
-        'isLoaded':false  
+        'isLoaded':false,
+        'hubConnection': null  
     }
     public getArticles=()=>{
-        fetch(`https://localhost:44379/api/News`)
+        fetch(`https://stayalertdevop.azurewebsites.net/api/News`,{
+            mode:"no-cors"
+        })
         .then((data:any)=> data.json())
         .then((resp:any)=>{
             const output:any[] = [];
@@ -60,7 +64,8 @@ class NewsPage extends Component<{}, INewsPageState> {
         })       
     }
     public componentDidMount(){
-        this.getArticles(); 
+        this.getArticles();
+
 
     }
 

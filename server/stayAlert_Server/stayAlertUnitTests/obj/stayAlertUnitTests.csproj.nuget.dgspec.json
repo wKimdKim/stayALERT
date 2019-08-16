@@ -1,9 +1,77 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Sandbox\\MSA-Phase2\\server\\stayalert_Server\\stayAlert_Server\\stayAlert_Server.csproj": {}
+    "D:\\Sandbox\\MSA-Phase2\\server\\stayalert_Server\\stayAlertUnitTests\\stayAlertUnitTests.csproj": {}
   },
   "projects": {
+    "D:\\Sandbox\\MSA-Phase2\\server\\stayalert_Server\\stayAlertUnitTests\\stayAlertUnitTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Sandbox\\MSA-Phase2\\server\\stayalert_Server\\stayAlertUnitTests\\stayAlertUnitTests.csproj",
+        "projectName": "stayAlertUnitTests",
+        "projectPath": "D:\\Sandbox\\MSA-Phase2\\server\\stayalert_Server\\stayAlertUnitTests\\stayAlertUnitTests.csproj",
+        "packagesPath": "C:\\Users\\derek\\.nuget\\packages\\",
+        "outputPath": "D:\\Sandbox\\MSA-Phase2\\server\\stayalert_Server\\stayAlertUnitTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\derek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "D:\\Sandbox\\MSA-Phase2\\server\\stayalert_Server\\stayAlert_Server\\stayAlert_Server.csproj": {
+                "projectPath": "D:\\Sandbox\\MSA-Phase2\\server\\stayalert_Server\\stayAlert_Server\\stayAlert_Server.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[1.3.2, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[1.3.2, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[15.9.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
     "D:\\Sandbox\\MSA-Phase2\\server\\stayalert_Server\\stayAlert_Server\\stayAlert_Server.csproj": {
       "version": "1.0.0",
       "restore": {

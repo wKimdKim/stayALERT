@@ -15,7 +15,7 @@ class FavouritePage extends Component<{}, IFavouritePageState> {
         'isLoaded':false
     }
     public getArticles=()=>{
-        fetch(`https://localhost:44379/api/Articles`)
+        fetch(`https://stayalertdevop.azurewebsites.net/api/Articles`)
         .then((data:any)=> data.json())
         .then((resp:any)=>{
             const output:any[] = [];
@@ -70,7 +70,7 @@ class FavouritePage extends Component<{}, IFavouritePageState> {
         }
         return ( 
             <div className="articles-container">
-                <h3>List of Articles</h3>
+                <h3>List of Favourited Articles</h3>
                 {output}
                 {noFav}
                 <div className={this.state.isLoaded?'hide':'show'}>Loading....</div>

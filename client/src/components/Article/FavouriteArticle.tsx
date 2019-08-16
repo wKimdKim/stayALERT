@@ -22,7 +22,7 @@ class FavouriteArticle extends Component<RouteComponentProps<IFavouriteArticlePr
         const {articleDetail} = this.props.location.state;
         const author=articleDetail.author===null?"N/A":articleDetail.author;
         const deleteFavourite=()=>{
-            fetch('https://localhost:44379/api/Articles/'+articleDetail.articleId,{
+            fetch('https://stayalertdevop.azurewebsites.net/Articles/'+articleDetail.articleId,{
                 method:'DELETE'
             })
         }

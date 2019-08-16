@@ -9,15 +9,12 @@ class Header extends React.Component{
         return ( 
             <div>
             <Navbar collapseOnSelect={false} expand="lg" bg="dark" variant="dark">
-                <LinkContainer to='/home'>
+                <LinkContainer to='/'>
                     <Navbar.Brand>stay<span className="red-highlight">ALERT</span></Navbar.Brand>
                 </LinkContainer>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <LinkContainer to="/home">
-                        <Nav.Link>Home</Nav.Link>
-                    </LinkContainer>
                     <LinkContainer to="/news">
                         <Nav.Link>News</Nav.Link>
                     </LinkContainer>

@@ -39,7 +39,7 @@ class Article extends Component<RouteComponentProps<IArticleProps>, IArticleStat
         //     map(resp=>this.setState({"isAdded":true}))
         // )
         // console.log('helo');
-        fetch('https://localhost:44379/api/Articles',{
+        fetch('https://stayalertdevop.azurewebsites.net/api/Articles',{
             method: 'POST',
             headers:{
                 'Content-Type':'application/json',
