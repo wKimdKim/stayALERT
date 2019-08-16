@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Sandbox\\MSA-Phase2\\server\\stayAlert_Server\\stayAlert_Server\\stayAlert_Server.csproj": {}
+    "D:\\Sandbox\\MSA-Phase2\\server\\stayalert_Server\\stayAlert_Server\\stayAlert_Server.csproj": {}
   },
   "projects": {
-    "D:\\Sandbox\\MSA-Phase2\\server\\stayAlert_Server\\stayAlert_Server\\stayAlert_Server.csproj": {
+    "D:\\Sandbox\\MSA-Phase2\\server\\stayalert_Server\\stayAlert_Server\\stayAlert_Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Sandbox\\MSA-Phase2\\server\\stayAlert_Server\\stayAlert_Server\\stayAlert_Server.csproj",
+        "projectUniqueName": "D:\\Sandbox\\MSA-Phase2\\server\\stayalert_Server\\stayAlert_Server\\stayAlert_Server.csproj",
         "projectName": "stayAlert_Server",
-        "projectPath": "D:\\Sandbox\\MSA-Phase2\\server\\stayAlert_Server\\stayAlert_Server\\stayAlert_Server.csproj",
+        "projectPath": "D:\\Sandbox\\MSA-Phase2\\server\\stayalert_Server\\stayAlert_Server\\stayAlert_Server.csproj",
         "packagesPath": "C:\\Users\\derek\\.nuget\\packages\\",
-        "outputPath": "D:\\Sandbox\\MSA-Phase2\\server\\stayAlert_Server\\stayAlert_Server\\obj\\",
+        "outputPath": "D:\\Sandbox\\MSA-Phase2\\server\\stayalert_Server\\stayAlert_Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -61,6 +61,14 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[2.2.3, )"
+            },
+            "NewsAPI": {
+              "target": "Package",
+              "version": "[0.5.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[4.0.1, )"
             }
           },
           "imports": [

@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Home from './components/Home/Home'
 import NewsPage from './components/NewsPage/NewsPage';
 import NotFound from './components/NotFound/NotFound';
+import Article from './components/Article/Article';
 
 class App extends React.Component {
   public render() {
@@ -15,7 +16,7 @@ class App extends React.Component {
           <Route path = "/" component={Home} exact={true}/>
           <Route path = "/home" component={Home} exact={true}/>
           <Route path = "/news" component={NewsPage} exact={true}/>
-          <Route path = "/news/:id" component={NewsPage} exact={true}/>
+          <Route path = "/Article/:id" component={Article} exact={true}/>
           <Route path = "/favourite" component={NewsPage} exact={true}/>
           <Route component={NotFound}/>
         </Switch>

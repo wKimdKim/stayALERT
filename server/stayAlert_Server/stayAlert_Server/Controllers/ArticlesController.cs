@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Net.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using stayAlert_Server.Model;
+using stayAlert_Server.Helper;
 
 namespace stayAlert_Server.Controllers
 {
+    //For retrieving favourited Articles
     [Route("api/[controller]")]
     [ApiController]
     public class ArticlesController : ControllerBase

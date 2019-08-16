@@ -8,10 +8,12 @@ class Header extends React.Component{
     public render() { 
         return ( 
             <div>
-            <Navbar bg="dark" variant="dark">
-                <LinkContainer to='home'>
+            <Navbar collapseOnSelect={false} expand="lg" bg="dark" variant="dark">
+                <LinkContainer to='/home'>
                     <Navbar.Brand>stay<span className="red-highlight">ALERT</span></Navbar.Brand>
                 </LinkContainer>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
                     <LinkContainer to="/home">
                         <Nav.Link>Home</Nav.Link>
@@ -23,6 +25,7 @@ class Header extends React.Component{
                         <Nav.Link>Favourite</Nav.Link>
                     </LinkContainer>
                 </Nav>
+                </Navbar.Collapse>
             </Navbar>
             </div>
          );

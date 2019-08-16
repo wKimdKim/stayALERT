@@ -1,3 +1,8 @@
+.article-row{
+    display:flex;
+    justify-content: flex-start;
+    margin-bottom: 1%;
+}
 .article-detail{
     display:flex;
     align-items: center;
@@ -7,6 +12,10 @@
 }
 .fav-icon{
     font-size: 32px;
+}
+.image{
+    width:100px;
+    height:100px;
 }
 td{
     padding-right:20px;

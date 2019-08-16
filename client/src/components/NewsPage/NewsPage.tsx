@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { APIKey } from '../../config';
 import { Component } from 'react';
+import {Link} from 'react-router-dom';
 import '../../config';
 import './NewsPage.css';
  
@@ -13,19 +13,44 @@ class INewsPage extends Component<{}, INewsPageState> {
         'articleList':[]  
     }
     public getArticles=()=>{
-        fetch(`https://newsapi.org/v2/top-headlines?country=nz&apiKey=${APIKey}`)
+        fetch(`https://localhost:44379/api/News`)
         .then((data:any)=> data.json())
         .then((resp:any)=>{
             const output:any[] = [];
             resp.articles.forEach((article:any)=>{
+                const author=article.author===null?"N/A":article.author
                 const row = (
-                <tr>
+                <div className="article-row">
                     <div className="article-details">
-                        <td>{article.isFavourited === true?<div><i className="fav-icon fas fa-bookmark"/></div>:<div><i className="fav-icon far fa-bookmark"/></div>}</td>
-                        <td><img width="100px" height="100px"src={article.urlToImage}/></td>
-                        <td><div><b>Title:</b>{article.title}</div><div className="article-description"><b>Description:</b>{article.description}</div><div className="article-author"><b>Author:</b>{article.author}</div></td>
+                        {/* <td>{article.isFavourited === true?<div><i className="fav-icon fas fa-bookmark"/></div>:<div><i className="fav-icon far fa-bookmark"/></div>}</td> */}
+                        <td>
+                            <div className="image">
+                            <Link to ={{
+                                pathname:'/Article/'+ article.title,
+                                state:{
+                                    articleDetail: article
+                                }
+                            }}>
+                                <img src={article.urlToImage} alt="N/A"/>
+                            </Link>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <b>Title:</b>
+                                <Link to ={{
+                                    pathname:'/Article/'+ article.title,
+                                    state:{
+                                        articleDetail: article
+                                    }
+                                }}>
+                                    {article.title}
+                                </Link>
+                            </div>
+                            <div className="article-description"><b>Description:</b>{article.description}</div>
+                            <div className="article-author"><b>Author:</b>{author}</div></td>
                     </div>
-                </tr>);
+                </div>);
                 output.push(row);
             });
             this.setState({articleList:output})
@@ -34,6 +59,7 @@ class INewsPage extends Component<{}, INewsPageState> {
     public componentDidMount(){
         this.getArticles(); 
     }
+
     public render() {
         const output:any[]= this.state.articleList;
         return ( 
