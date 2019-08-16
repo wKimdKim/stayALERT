@@ -5,12 +5,14 @@ import '../../config';
 import '../NewsPage/NewsPage.css';
  
 export interface IFavouritePageState {
-    'articleList':any[]
+    'articleList':any[],
+    'isLoaded':any
 }
  
 class FavouritePage extends Component<{}, IFavouritePageState> {
     public state = { 
-        'articleList':[]  
+        'articleList':[],  
+        'isLoaded':false
     }
     public getArticles=()=>{
         fetch(`https://localhost:44379/api/Articles`)
@@ -53,7 +55,7 @@ class FavouritePage extends Component<{}, IFavouritePageState> {
                 output.push(row);
             }
             );
-            this.setState({articleList:output})
+            this.setState({articleList:output, isLoaded:true})
         })       
     }
     public componentDidMount(){
@@ -63,14 +65,15 @@ class FavouritePage extends Component<{}, IFavouritePageState> {
     public render() {
         const output:any[]= this.state.articleList;
         let noFav;
-        if(output.length===0){
-            noFav=<div>No favourite articles</div>
+        if(this.state.isLoaded===true && output.length===0){
+                noFav=<div>No favourite articles</div>
         }
         return ( 
             <div className="articles-container">
                 <h3>List of Articles</h3>
                 {output}
                 {noFav}
+                <div className={this.state.isLoaded?'hide':'show'}>Loading....</div>
             </div>
          );
     }

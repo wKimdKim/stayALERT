@@ -20,6 +20,9 @@
 td{
     padding-right:20px;
 }
+.hide{
+    display:none;
+}
 @media only screen and (max-width:768px){
     .article-author, .article-description{
         display:none;

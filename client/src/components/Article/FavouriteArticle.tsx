@@ -13,6 +13,9 @@ class FavouriteArticle extends Component<RouteComponentProps<IFavouriteArticlePr
 
     public constructor(props:RouteComponentProps<IFavouriteArticleProps>){
         super(props);
+        this.state = {
+            "isLoaded":false
+        }
     }
 
     public render() { 

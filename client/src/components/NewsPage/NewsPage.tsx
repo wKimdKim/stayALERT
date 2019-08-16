@@ -3,15 +3,17 @@ import { Component } from 'react';
 import {Link} from 'react-router-dom';
 import '../../config';
 import './NewsPage.css';
-import * as signalR from "@aspnet/signalr";
+// import * as signalR from "@aspnet/signalr";
  
 export interface INewsPageState {
     'articleList':any[]
+    'isLoaded':any
 }
  
 class NewsPage extends Component<{}, INewsPageState> {
     public state = { 
-        'articleList':[]  
+        'articleList':[],
+        'isLoaded':false  
     }
     public getArticles=()=>{
         fetch(`https://localhost:44379/api/News`)
@@ -54,7 +56,7 @@ class NewsPage extends Component<{}, INewsPageState> {
                 </div>);
                 output.push(row);
             });
-            this.setState({articleList:output})
+            this.setState({articleList:output, isLoaded:true})
         })       
     }
     public componentDidMount(){
@@ -67,6 +69,7 @@ class NewsPage extends Component<{}, INewsPageState> {
         return ( 
             <div className="articles-container">
                 <h3>List of Articles</h3>
+                <div className={this.state.isLoaded?'hide':'show'}>Loading...</div>
                 {output}
             </div>
          );
