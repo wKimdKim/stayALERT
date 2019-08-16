@@ -4,86 +4,55 @@ import {RouteComponentProps} from 'react-router';
 import './Article.css';
 import {Button} from 'react-bootstrap';
 
-export interface IArticleState {
-    "isAdded":any
-}
-
-export interface IArticleProps {
+export interface IFavouriteArticleProps {
     "article":any
 }
 
  
-class Article extends Component<RouteComponentProps<IArticleProps>, IArticleState> {
+class FavouriteArticle extends Component<RouteComponentProps<IFavouriteArticleProps>, {}> {
 
-    constructor(props:RouteComponentProps<IArticleProps>){
+    public constructor(props:RouteComponentProps<IFavouriteArticleProps>){
         super(props);
-        this.state={
-            "isAdded":false
-        }
-    }
-    public handleFavourited=()=>{
-        const {articleDetail} = this.props.location.state;
-        const data = {
-            "articleContent": articleDetail.content,
-            "articleDescription": articleDetail.description,
-            "articleTitle": articleDetail.title,
-            "author":articleDetail.author,
-            "isFavourite": true,
-            "publishedDate": "2019-08-16T07:13:13.682Z",
-            "thumbnailUrl": articleDetail.urlToImage,
-            "webUrl": articleDetail.urlToImage,
-        }
-        fetch(`https://localhost:44379/api/Articles`,{
-            method: 'POST',
-            headers:{
-                'Content-Type':'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(resp => resp.json());
-        this.setState({"isAdded":true})
     }
 
     public render() { 
         const {articleDetail} = this.props.location.state;
-        const isAdded = this.state.isAdded;
         const author=articleDetail.author===null?"N/A":articleDetail.author;
-        let favouriteButton; 
-        if(!isAdded){
-            favouriteButton=<Button variant="link" onClick={this.handleFavourited}>Add to Favourite</Button>;
+        const deleteFavourite=()=>{
+            fetch('https://localhost:44379/api/Articles/'+articleDetail.articleId,{
+                method:'DELETE'
+            })
         }
-        else{
-            favouriteButton=<Button variant="link">Added</Button>;
-        }
+        const deleteButton =<Button className="delete" variant="link" onClick={deleteFavourite}>Delete</Button>;
 
         return ( 
             <div>
                 <div className="title-section">
                     <h3>
-                        {articleDetail.title}
+                        {articleDetail.articleTitle}
                     </h3>
-                    {favouriteButton}
+                    {deleteButton}
                 </div>
                 <div className="image-container">
-                    <img src={articleDetail.urlToImage}/>
+                    <img src={articleDetail.thumbnailUrl}/>
                 </div>
                 <div>
                 <h4>
                     Author: {author}
                 </h4>
                 <h5>
-                    Published at: {articleDetail.publishedAt}
+                    Published at: {articleDetail.publishedDate}
                 </h5>
                 <div className="url-container">
-                    <a href={articleDetail.url}>Read from the source</a>
+                    <a href={articleDetail.webUrl}>Read from the source</a>
                 </div>
                 </div>
                 <div>
-                    {articleDetail.content}
+                    {articleDetail.articleContent}
                 </div>
             </div>
          );
     }
 }
  
-export default Article;
+export default FavouriteArticle;

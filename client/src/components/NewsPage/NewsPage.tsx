@@ -3,6 +3,7 @@ import { Component } from 'react';
 import {Link} from 'react-router-dom';
 import '../../config';
 import './NewsPage.css';
+import * as signalR from "@aspnet/signalr";
  
 export interface INewsPageState {
     'articleList':any[]
@@ -58,6 +59,7 @@ class NewsPage extends Component<{}, INewsPageState> {
     }
     public componentDidMount(){
         this.getArticles(); 
+
     }
 
     public render() {

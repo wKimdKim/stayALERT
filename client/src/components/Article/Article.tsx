@@ -3,8 +3,8 @@ import { Component } from 'react';
 import {RouteComponentProps} from 'react-router';
 import './Article.css';
 import {Button} from 'react-bootstrap';
-import {ajax} from 'rxjs/ajax';
-import {map} from 'rxjs/operators';
+// import {ajax} from 'rxjs/ajax';
+// import {map} from 'rxjs/operators';
 
 export interface IArticleState {
     "isAdded":any
@@ -35,18 +35,18 @@ class Article extends Component<RouteComponentProps<IArticleProps>, IArticleStat
             "ThumbnailURL": articleDetail.urlToImage,
             "WebUrl": articleDetail.url,
         };
-        ajax.post('https://localhost:44379/api/Articles', data).pipe(
-            map(resp=>this.setState({"isAdded":true}))
-        )
+        // ajax.post('https://localhost:44379/api/Articles', data).pipe(
+        //     map(resp=>this.setState({"isAdded":true}))
+        // )
         // console.log('helo');
-    //     fetch('https://localhost:44379/api/Articles',{
-    //         method: 'POST',
-    //         headers:{
-    //             'Content-Type':'application/json',
-    //         },
-    //         body: JSON.stringify(data),
-    //     })
-    //     .then(resp=>this.setState({"isAdded":true}));
+        fetch('https://localhost:44379/api/Articles',{
+            method: 'POST',
+            headers:{
+                'Content-Type':'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(resp=>this.setState({"isAdded":true}));
     }
 
     public render() { 

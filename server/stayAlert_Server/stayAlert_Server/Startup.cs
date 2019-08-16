@@ -34,7 +34,7 @@ namespace stayAlert_Server
                 builder =>
                 {
                     builder.WithOrigins("http://localhost:3000",
-                                        "http://www.contoso.com");
+                                        "http://www.contoso.com").AllowAnyHeader().AllowAnyMethod();
                 });
             });
             services.AddSwaggerGen(c =>

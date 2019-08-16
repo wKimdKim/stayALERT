@@ -25,12 +25,12 @@ class FavouritePage extends Component<{}, IFavouritePageState> {
                         <td>
                             <div className="image">
                             <Link to ={{
-                                pathname:'/favourite/'+ article.title,
+                                pathname:'/favourite/'+ article.articleTitle,
                                 state:{
                                     articleDetail: article
                                 }
                             }}>
-                                <img src={article.urlToImage} alt="N/A"/>
+                                <img src={article.thumbnailUrl} alt="N/A"/>
                             </Link>
                             </div>
                         </td>
@@ -38,15 +38,15 @@ class FavouritePage extends Component<{}, IFavouritePageState> {
                             <div>
                                 <b>Title:</b>
                                 <Link to ={{
-                                    pathname:'/favourite/'+ article.title,
+                                    pathname:'/favourite/'+ article.articleTitle,
                                     state:{
                                         articleDetail: article
                                     }
                                 }}>
-                                    {article.title}
+                                    {article.articleTitle}
                                 </Link>
                             </div>
-                            <div className="article-description"><b>Description:</b>{article.description}</div>
+                            <div className="article-description"><b>Description:</b>{article.articleDescription}</div>
                             <div className="article-author"><b>Author:</b>{author}</div></td>
                     </div>
                 </div>);
