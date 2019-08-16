@@ -16,6 +16,6 @@ namespace stayAlertUnitTests
     {
         public static readonly DbContextOptions<stayAlertContext>options
             = new DbContextOptions<stayAlertContext>()
-            .UseInM
+            .UseInMemoryDatabase()
     }
 }

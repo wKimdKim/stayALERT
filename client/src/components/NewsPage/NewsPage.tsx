@@ -38,7 +38,7 @@ class NewsPage extends Component<{}, INewsPageState> {
                                     articleDetail: article
                                 }
                             }}>
-                                <img src={article.urlToImage} alt="N/A"/>
+                                <img src={article.urlToImage} alt={article.urlToImage}/>
                             </Link>
                             </div>
                         </td>

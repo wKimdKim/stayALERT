@@ -15,7 +15,9 @@ class FavouritePage extends Component<{}, IFavouritePageState> {
         'isLoaded':false
     }
     public getArticles=()=>{
-        fetch(`https://stayalertdevop.azurewebsites.net/api/Articles`)
+        fetch(`https://stayalertdevop.azurewebsites.net/api/Articles`,{
+            mode:"no-cors"
+        })
         .then((data:any)=> data.json())
         .then((resp:any)=>{
             const output:any[] = [];
