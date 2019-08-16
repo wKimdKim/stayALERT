@@ -33,14 +33,15 @@ class Article extends Component<RouteComponentProps<IArticleProps>, IArticleStat
             "thumbnailUrl": articleDetail.urlToImage,
             "webUrl": articleDetail.urlToImage,
         }
-        fetch('http://localhost:44379/api/Articles',{
+        fetch(`https://localhost:44379/api/Articles`,{
             method: 'POST',
             headers:{
-                'Content-Type':'text/plain',
+                'Content-Type':'application/json'
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify(data)
         })
-        .then(resp=>this.setState({"isAdded":true}));
+        .then(resp => resp.json());
+        this.setState({"isAdded":true})
     }
 
     public render() { 

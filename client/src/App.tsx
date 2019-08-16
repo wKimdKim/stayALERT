@@ -6,6 +6,8 @@ import Home from './components/Home/Home'
 import NewsPage from './components/NewsPage/NewsPage';
 import NotFound from './components/NotFound/NotFound';
 import Article from './components/Article/Article';
+import FavouriteArticle from './components/Article/FavouriteArticle';
+import FavouritePage from './components/FavouritePage/FavouritePage';
 
 class App extends React.Component {
   public render() {
@@ -17,7 +19,8 @@ class App extends React.Component {
           <Route path = "/home" component={Home} exact={true}/>
           <Route path = "/news" component={NewsPage} exact={true}/>
           <Route path = "/Article/:id" component={Article} exact={true}/>
-          <Route path = "/favourite" component={NewsPage} exact={true}/>
+          <Route path = "/favourite" component={FavouritePage} exact={true}/>
+          <Route path = "/favourite/:id" component={FavouriteArticle} exact={true}/>
           <Route component={NotFound}/>
         </Switch>
       </Router>
