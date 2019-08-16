@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using stayAlert_Server.Model;
-using stayAlert_Server.Helper;
 
 namespace stayAlert_Server.Controllers
 {
@@ -76,7 +75,7 @@ namespace stayAlert_Server.Controllers
 
         // POST: api/Articles
         [HttpPost]
-        public async Task<ActionResult<Article>> PostArticle(Article article)
+        public async Task<ActionResult<Article>> PostArticle([FromBody]Article article)
         {
             _context.Article.Add(article);
             await _context.SaveChangesAsync();

@@ -33,12 +33,6 @@ namespace stayAlert_Server.Model
 
             modelBuilder.Entity<Article>(entity =>
             {
-                entity.Property(e => e.ArticleTitle).IsUnicode(false);
-
-                entity.Property(e => e.Author).IsUnicode(false);
-
-                entity.Property(e => e.ThumbnailUrl).IsUnicode(false);
-
                 entity.Property(e => e.WebUrl).IsUnicode(false);
             });
 

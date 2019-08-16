@@ -14,9 +14,6 @@ namespace stayAlert_Server.Model
 
         public int ArticleId { get; set; }
         [Required]
-        [StringLength(255)]
-        public string ArticleTitle { get; set; }
-        [Required]
         [Column("WebURL")]
         [StringLength(255)]
         public string WebUrl { get; set; }
@@ -27,13 +24,14 @@ namespace stayAlert_Server.Model
         public DateTime? PublishedDate { get; set; }
         [Column("isFavourite")]
         public bool IsFavourite { get; set; }
-        [Column("ThumbnailURL")]
-        [StringLength(1)]
-        public string ThumbnailUrl { get; set; }
-        [StringLength(1)]
-        public string Author { get; set; }
         [Column(TypeName = "text")]
         public string ArticleDescription { get; set; }
+        [Column(TypeName = "text")]
+        public string Author { get; set; }
+        [Column("ThumbnailURL", TypeName = "text")]
+        public string ThumbnailUrl { get; set; }
+        [Column(TypeName = "text")]
+        public string ArticleTitle { get; set; }
 
         [InverseProperty("Article")]
         public virtual ICollection<Note> Note { get; set; }

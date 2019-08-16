@@ -3,6 +3,8 @@ import { Component } from 'react';
 import {RouteComponentProps} from 'react-router';
 import './Article.css';
 import {Button} from 'react-bootstrap';
+import {ajax} from 'rxjs/ajax';
+import {map} from 'rxjs/operators';
 
 export interface IArticleState {
     "isAdded":any
@@ -24,23 +26,27 @@ class Article extends Component<RouteComponentProps<IArticleProps>, IArticleStat
     public handleFavourited=()=>{
         const {articleDetail} = this.props.location.state;
         const data = {
-            "articleContent": articleDetail.content,
-            "articleDescription": articleDetail.description,
-            "articleTitle": articleDetail.title,
-            "author":articleDetail.author,
+            "ArticleContent": articleDetail.content,
+            "ArticleDescription": articleDetail.description,
+            "ArticleTitle": articleDetail.title,
+            "Author":articleDetail.author,
             "isFavourite": true,
-            "publishedDate": "2019-08-16T07:13:13.682Z",
-            "thumbnailUrl": articleDetail.urlToImage,
-            "webUrl": articleDetail.urlToImage,
-        }
-        fetch('http://localhost:44379/api/Articles',{
-            method: 'POST',
-            headers:{
-                'Content-Type':'text/plain',
-            },
-            body: JSON.stringify(data),
-        })
-        .then(resp=>this.setState({"isAdded":true}));
+            "PublishedDate": "2019-08-16T07:13:13.682Z",
+            "ThumbnailURL": articleDetail.urlToImage,
+            "WebUrl": articleDetail.url,
+        };
+        ajax.post('https://localhost:44379/api/Articles', data).pipe(
+            map(resp=>this.setState({"isAdded":true}))
+        )
+        // console.log('helo');
+    //     fetch('https://localhost:44379/api/Articles',{
+    //         method: 'POST',
+    //         headers:{
+    //             'Content-Type':'application/json',
+    //         },
+    //         body: JSON.stringify(data),
+    //     })
+    //     .then(resp=>this.setState({"isAdded":true}));
     }
 
     public render() { 
