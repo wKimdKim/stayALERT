@@ -71,7 +71,7 @@ namespace stayAlert_Server
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ScribrAPI V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "stayAlert_Server");
                 c.RoutePrefix = string.Empty; // launch swagger from root
             });
             if (env.IsDevelopment())

@@ -31,7 +31,7 @@ class Article extends Component<RouteComponentProps<IArticleProps>, IArticleStat
             "ArticleTitle": articleDetail.title,
             "Author":articleDetail.author,
             "isFavourite": true,
-            "PublishedDate": "2019-08-16T07:13:13.682Z",
+            "PublishedDate": articleDetail.publishedAt,
             "ThumbnailURL": articleDetail.urlToImage,
             "WebUrl": articleDetail.url,
         };

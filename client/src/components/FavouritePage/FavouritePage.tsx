@@ -7,16 +7,16 @@ import '../NewsPage/NewsPage.css';
 export interface IFavouritePageState {
     'articleList':any[],
     'isLoaded':any,
-    'hubConnection': any,
-    'updateFavouriteList': any,
+    // 'hubConnection': any,
+    // 'updateFavouriteList': any,
 }
  
 class FavouritePage extends Component<{}, IFavouritePageState> {
     public signalR = require("@aspnet/signalr");
     public state = { 
-        'hubConnection': new this.signalR.HubConnectionBuilder().withUrl("https://localhost:44303/hub").build(),
+        // 'hubConnection': new this.signalR.HubConnectionBuilder().withUrl("https://localhost:44303/hub").build(),
         'articleList':[],
-        'updateFavouriteList': null,  
+        // 'updateFavouriteList': null,  
         'isLoaded':false
     }
     public getArticles=()=>{
@@ -64,11 +64,11 @@ class FavouritePage extends Component<{}, IFavouritePageState> {
         })       
     }
     public componentDidMount(){
-        this.state.hubConnection.on("Connected");
-        this.state.hubConnection.on("UpdateFavouriteList", ()  => {
-            this.setState({updateFavouriteList:true});
-        });
-        this.state.hubConnection.start().then(() => this.state.hubConnection.invoke("BroadcastMessage"));
+        // this.state.hubConnection.on("Connected");
+        // this.state.hubConnection.on("UpdateFavouriteList", ()  => {
+        //     this.setState({updateFavouriteList:true});
+        // });
+        // this.state.hubConnection.start().then(() => this.state.hubConnection.invoke("BroadcastMessage"));
         this.getArticles(); 
     }
 
